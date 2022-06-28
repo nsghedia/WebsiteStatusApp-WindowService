@@ -17,6 +17,7 @@ namespace WebsiteStatusApp
         public override Task StopAsync(CancellationToken cancellationToken)
         {
             client.Dispose();
+            _logger.LogInformation("The service has been stopped");
             return base.StopAsync(cancellationToken);
         }
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
